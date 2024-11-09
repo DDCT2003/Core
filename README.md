@@ -27,8 +27,8 @@ Node.js y npm instalados.
 MongoDB Atlas para la base de datos.
 
 # Paso 1: Clonar el repositorio
-git clone <URL_del_repositorio>
-cd nombre-del-repositorio
+- git clone (https://github.com/DDCT2003/Core.git)
+- cd Core
 
 # Paso 2: Configurar el backend (NestJS)
 Entra en el directorio del admin-backend:
