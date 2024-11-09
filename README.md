@@ -1,18 +1,18 @@
 ## Clothing Store App
 Esta es una aplicación web de gestión de una tienda de ropa que permite a los usuarios registrarse, iniciar sesión y acceder a diferentes vistas según su rol. La aplicación cuenta con un sistema de roles basado en autenticación, que distingue entre administradores (admin) y usuarios regulares (user). La interfaz de usuario está desarrollada en React, mientras que el backend utiliza NestJS. La base de datos empleada es MongoDB Atlas.
 
-#Características
+# Características
 Autenticación de usuario: Los usuarios pueden registrarse e iniciar sesión.
 Roles y permisos: Los roles se asignan automáticamente; los administradores tienen acceso a un CRUD de prendas, mientras que los usuarios tienen acceso a la tienda de ropa.
 Registro de usuarios: Los usuarios se registran con el rol predeterminado de "user".
 Protección de rutas: Las rutas están protegidas para que solo los usuarios autenticados puedan acceder.
 
-#Tecnologías utilizadas
+# Tecnologías utilizadas
 Frontend: React
 Backend: NestJS
 Base de datos: MongoDB Atlas
 
-#Funcionalidades
+# Funcionalidades
 Inicio de sesión: Los usuarios pueden iniciar sesión y ser redirigidos a diferentes rutas según su rol.
 Registro: Los nuevos usuarios se registran con el rol de "user".
 Rutas protegidas: Acceso a las rutas restringido según autenticación y rol.
@@ -22,15 +22,15 @@ User: Puede acceder a la tienda de ropa.
 Instalación y configuración
 Sigue estos pasos para configurar el proyecto localmente:
 
-#Prerrequisitos
+# Prerrequisitos
 Node.js y npm instalados.
 MongoDB Atlas para la base de datos.
 
-#Paso 1: Clonar el repositorio
+# Paso 1: Clonar el repositorio
 git clone <URL_del_repositorio>
 cd nombre-del-repositorio
 
-#Paso 2: Configurar el backend (NestJS)
+# Paso 2: Configurar el backend (NestJS)
 Entra en el directorio del admin-backend:
 cd admin-backend
 Instala las dependencias:
@@ -38,7 +38,7 @@ npm install
 Inicia el servidor:
 npm run start
 
-#Paso 3: Configurar el frontend (React)
+# Paso 3: Configurar el frontend (React)
 Entra en el directorio del frontend:
 - cd ../admin-frontend
 Instala las dependencias:
@@ -55,6 +55,8 @@ Protección de rutas: Solo los usuarios autenticados pueden acceder a las rutas 
 
 
 Estructura del proyecto
+
+```
 
 ├── admin-backend
 │   ├── src
@@ -73,7 +75,9 @@ Estructura del proyecto
 │   │   ├── pages      // Páginas de la aplicación
 │   │   └── context   // contexto para proteger las rutas
 └── README.md
-Contribuciones
+```
+
+# Contribuciones
 Las contribuciones son bienvenidas. Puedes contribuir en mejoras de diseño, corrección de errores o agregar nuevas funcionalidades.
 
 Licencia
