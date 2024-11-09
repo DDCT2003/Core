@@ -70,11 +70,11 @@ Inicia el servidor de desarrollo:
 │   │   |  ├── user.service.ts
 │   │   ├── app.module 
 │   |   ├── main.ts   // Archivo principal de arranque de NestJS
-├── frontend
+├── admin-frontend
 │   ├── src
 │   │   ├── components // Componentes de React
 │   │   ├── pages      // Páginas de la aplicación
-│   │   └── context   // contexto para proteger las rutas
+│   │   └── context   // Contexto para proteger las rutas
 └── README.md
 ```
 
