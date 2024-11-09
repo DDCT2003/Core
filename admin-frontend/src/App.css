@@ -1,0 +1,190 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+div{
+  width: 100%;
+  height: 100%;
+
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6d0000;
+  color: white;
+  height: 10px !important;
+  margin-top: 0px !important;
+  width: 100% !important;
+}
+
+header .title {
+  width: 100%;
+  font-weight: bold;
+  margin-right: 800px; 
+}
+
+
+/* Estilos generales para centrar el formulario */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+h3 {
+  display: flex;
+  color: #333;
+  justify-content: space-around;
+}
+
+h4 {
+  text-align: center;
+  color: #ffffff;
+  size: 10px;
+}
+
+form {
+  background-color: #fff;
+  padding: 2rem;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"],
+input[type="password"] {
+  width: 50%;
+  padding: 12px;
+  margin: 8px 0px 16px 350px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+}
+
+input[type="color"] {
+  
+  width: 50%;
+  height: 40px;
+  margin: 8px 0 16px 350px;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Estilo del botón */
+button[type="submit"] {
+  width: 50%;
+  margin-left: 350px;
+  padding: 12px ;
+  margin-bottom: 20px;
+  background-color: #c20000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff0000;
+}
+
+button[type="regis"] {
+  width: 50%;
+  margin-left: 350px;
+  padding: 12px ;
+  margin-bottom: 20px;
+  background-color: #330000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="regis"]:hover {
+  background-color: #720000;
+}
+
+button[type="logout"]{
+  margin-left: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #6d0000;
+  color: rgb(255, 255, 255);
+}
+
+button[type="logout"]:hover {
+  font-weight: bold;
+  font-size: 13px;
+}
+/* Ajuste de márgenes en el formulario */
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
