@@ -1,4 +1,4 @@
-###Clothing Store App
+## Clothing Store App
 Esta es una aplicación web de gestión de una tienda de ropa que permite a los usuarios registrarse, iniciar sesión y acceder a diferentes vistas según su rol. La aplicación cuenta con un sistema de roles basado en autenticación, que distingue entre administradores (admin) y usuarios regulares (user). La interfaz de usuario está desarrollada en React, mientras que el backend utiliza NestJS. La base de datos empleada es MongoDB Atlas.
 
 #Características
