@@ -36,7 +36,7 @@ function Dashboard() {
       
       <input
         type="text"
-        placeholder="Para que clima es"
+        placeholder="Clima"
         value={tipoClima}
         onChange={(e) => setTipoClima(e.target.value)}
       />

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 function Tienda() {
-  return <h1>Bienvenido a la Tiendita</h1>;
+  return <h1>Bienvenido a la Tiendita :D</h1>;
 }
 
 export default Tienda;
