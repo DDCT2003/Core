@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { handleRopa } from '../Controller/ropaController';
 
 function Dashboard() {
@@ -6,6 +6,7 @@ function Dashboard() {
   const [tipo, setTipo] = useState('');
   const [talla, setTalla] = useState('');
   const [color, setColor] = useState('');
+  const [colores, setColores] = useState([]);
   const [precio, setPrecio] = useState('');
   const [clima, setClima] = useState('');
   const [stock, setStock] = useState('');
@@ -18,6 +19,23 @@ function Dashboard() {
   const formalidadOptions = ['Formal', 'Semiformal', 'Casual'];
   const edadOptions = ['Niño', 'Joven', 'Adulto'];
 
+
+  useEffect(() => {
+    const fetchColores = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/color/get'); // Endpoint del backend
+        if (!response.ok) {
+          throw new Error('Error al obtener los colores');
+        }
+        const data = await response.json();
+        setColores(data); // Actualizar el estado con los colores obtenidos
+      } catch (error) {
+        console.error('Error al obtener colores:', error);
+      }
+    };
+
+    fetchColores();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -95,12 +113,17 @@ function Dashboard() {
         ))}
       </select>
 
-      <input
-        type="text"
-        placeholder="Color"
+      <select
         value={color}
         onChange={(e) => setColor(e.target.value)}
-      />
+      >
+        <option value="">Seleccione un color</option>
+        {colores.map((c) => (
+          <option key={c._id} value={c.color}>
+            {c.color}
+          </option>
+        ))}
+      </select>
       <button type="submit" onClick={handleSubmit}>
         Añadir Prenda
       </button>

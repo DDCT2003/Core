@@ -32,7 +32,7 @@ const Header = () => {
           <FaUserLock className='nav-icon'/> Cerrar Sesión</a></li>
       </>
     );
-  } else if (location.pathname === '/admin') {
+  } else if (location.pathname === '/admin' || location.pathname === '/tiendaAdmin') {
     headerContent = (
       <>
          <li className="nav-item"><a href="/tiendaAdmin" className="nav-link"> 

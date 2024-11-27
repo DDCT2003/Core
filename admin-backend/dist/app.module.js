@@ -14,6 +14,7 @@ const app_service_1 = require("./app.service");
 const app_controller_1 = require("./app.controller");
 const ropa_module_1 = require("./ropa/ropa.module");
 const weather_module_1 = require("./weather/weather.module");
+const color_module_1 = require("./color/color.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -24,6 +25,7 @@ exports.AppModule = AppModule = __decorate([
             user_module_1.UserModule,
             ropa_module_1.RopaModule,
             weather_module_1.WeatherModule,
+            color_module_1.ColorModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
