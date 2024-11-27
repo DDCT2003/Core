@@ -9,6 +9,12 @@ export class User extends Document {
   @Prop({ required: true })
   contraseña: string;
 
+  @Prop({ required: true })
+  edad: string;
+
+  @Prop({ required: true })
+  formalidad: string;
+
   @Prop({ default: 'user' })
   tipo: string;
 }

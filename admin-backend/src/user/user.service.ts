@@ -19,6 +19,8 @@ export class UserService {
       return {
         name: user.name,
         role: user.role,
+        edad: user.edad,
+        formalidad: user.formalidad
       };
     }
     return null;

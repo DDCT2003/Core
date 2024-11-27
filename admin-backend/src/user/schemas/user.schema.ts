@@ -5,6 +5,12 @@ export enum AdminRole{
     USER= 'User'
 }
 
+export enum Formalidad{
+    Formal = 'Formal',
+    Semiformal= 'Semiformal',
+    Casual='Casual'
+}
+
 @Schema()
 export class User{
     @Prop({required:true})
@@ -15,6 +21,12 @@ export class User{
 
     @Prop({default: AdminRole.USER})
     role: AdminRole;
+
+    @Prop({ required: true })
+    formalidad: Formalidad;
+
+    @Prop({ required: true })
+    edad: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

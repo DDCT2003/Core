@@ -11,5 +11,7 @@ export declare class UserService {
     login(name: string, password: string): Promise<{
         name: string;
         role: import("./schemas/user.schema").AdminRole;
+        edad: string;
+        formalidad: import("./schemas/user.schema").Formalidad;
     }>;
 }

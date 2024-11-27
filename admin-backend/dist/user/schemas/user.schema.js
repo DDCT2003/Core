@@ -9,13 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserSchema = exports.User = exports.AdminRole = void 0;
+exports.UserSchema = exports.User = exports.Formalidad = exports.AdminRole = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 var AdminRole;
 (function (AdminRole) {
     AdminRole["ADMIN"] = "Admin";
     AdminRole["USER"] = "User";
 })(AdminRole || (exports.AdminRole = AdminRole = {}));
+var Formalidad;
+(function (Formalidad) {
+    Formalidad["Formal"] = "Formal";
+    Formalidad["Semiformal"] = "Semiformal";
+    Formalidad["Casual"] = "Casual";
+})(Formalidad || (exports.Formalidad = Formalidad = {}));
 let User = class User {
 };
 exports.User = User;
@@ -31,6 +37,14 @@ __decorate([
     (0, mongoose_1.Prop)({ default: AdminRole.USER }),
     __metadata("design:type", String)
 ], User.prototype, "role", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
+], User.prototype, "formalidad", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
+], User.prototype, "edad", void 0);
 exports.User = User = __decorate([
     (0, mongoose_1.Schema)()
 ], User);

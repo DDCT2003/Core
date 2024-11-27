@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -60,6 +61,66 @@ header .title {
   margin-right: 800px; 
 }
 
+/* src/components/Header.css */
+
+.header {
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  max-width: 700px;
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  color: #ffecec; /* Naranja para el ícono */
+}
+
+.nav-icon {
+  font-size: 0.8rem;
+  color: #ffecec; /* Naranja para el ícono */
+}
+
+.header-title {
+  font-size: 15px;
+  margin: 0;
+}
+
+.nav {
+  max-width: 500px;
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 20px;
+}
+
+.nav-item {
+  font-size: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff0000; /* Cambiar a naranja al pasar el ratón */
+}
+
 
 /* Estilos generales para centrar el formulario */
 body {
@@ -72,6 +133,10 @@ body {
   background-color: #f0f2f5;
 }
 
+h1{
+  text-align: start;
+  font-size : 18px;
+}
 h2 {
   text-align: center;
   color: #333;
@@ -84,7 +149,7 @@ h3 {
 }
 
 h4 {
-  text-align: center;
+  text-align: start;
   color: #ffffff;
   size: 10px;
 }
@@ -99,7 +164,18 @@ form {
 
 /* Estilo de los campos de entrada */
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
+  width: 50%;
+  padding: 12px;
+  margin: 8px 0px 16px 350px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+select {
   width: 50%;
   padding: 12px;
   margin: 8px 0px 16px 350px;
@@ -110,7 +186,8 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="number"]:focus {
   outline: none;
   border-color: #0056b3;
   box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
@@ -188,3 +265,31 @@ form div {
   gap: 0.5rem;
 }
 
+.divtable{
+  justify-items: center;
+  align-content: start;
+}
+
+
+.divtable td{
+  text-align: center;
+  background-color: white;
+}
+
+.divtable th{
+  background-color: #6d0000;
+  color: white;
+}
+
+.botoncore {
+  padding: 5px 10px;
+  background-color: #6d0000;
+  cursor:pointer;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  height:25px;
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-right:5px;
+}

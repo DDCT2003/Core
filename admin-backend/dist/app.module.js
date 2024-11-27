@@ -12,6 +12,8 @@ const mongoose_1 = require("@nestjs/mongoose");
 const user_module_1 = require("./user/user.module");
 const app_service_1 = require("./app.service");
 const app_controller_1 = require("./app.controller");
+const ropa_module_1 = require("./ropa/ropa.module");
+const weather_module_1 = require("./weather/weather.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -20,6 +22,8 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             mongoose_1.MongooseModule.forRoot('mongodb+srv://ropacore:ropacore@cluster0.mi2yl.mongodb.net/ropacoredb?retryWrites=true&w=majority&appName=Cluster0'),
             user_module_1.UserModule,
+            ropa_module_1.RopaModule,
+            weather_module_1.WeatherModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

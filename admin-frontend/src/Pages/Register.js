@@ -1,37 +1,24 @@
 // Register.js
 import React, { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import {handleRegister} from '../Controller/userController'
+
 
 function Register() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    const [formalidad, setFormalidad] = useState('');
+    const [edad, setEdad] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
 
-    const handleRegister = async () => {
-        try {
-            const response = await fetch('http://localhost:3000/user', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ name, password }),
-            });
-      
-            if (response.ok) {
-              const data = await response.json();
-              setMessage(`Registro exitoso. Role: ${data.role}`);
-              navigate('/')
-              
-              // Aquí puedes redirigir o almacenar el rol del usuario según sea necesario.
-            } else {
-              setMessage('No se registró');
-            }
-          } catch (error) {
-            setMessage('An error occurred');
-            console.error(error);
-          }
+    const formalidadoptions = ['Formal', 'Semiformal', 'Casual'];
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        await handleRegister(name, password,formalidad,edad, setMessage, navigate);
       };
+      
   return (
     <div>
       <h2>Regístrate</h2>
@@ -47,7 +34,24 @@ function Register() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button type='regis' onClick={handleRegister}>Registrarse</button>
+        <input
+        type="number"
+        placeholder="Edad"
+        value={edad}
+        onChange={(e) => setEdad(e.target.value)}
+      />
+      <select 
+        value={formalidad}
+        onChange={(e) => setFormalidad(e.target.value)}
+      >
+       <option value="">Seleccione un tipo de formalidad</option>
+        {formalidadoptions.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      <button type='regis' onClick={handleSubmit}>Registrarse</button>
       <p>{message}</p>
 
     </div>

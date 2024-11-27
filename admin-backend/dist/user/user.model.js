@@ -24,6 +24,14 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "contrase\u00F1a", void 0);
 __decorate([
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
+], User.prototype, "edad", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
+], User.prototype, "formalidad", void 0);
+__decorate([
     (0, mongoose_1.Prop)({ default: 'user' }),
     __metadata("design:type", String)
 ], User.prototype, "tipo", void 0);

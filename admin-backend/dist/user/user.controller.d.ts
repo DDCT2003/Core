@@ -13,5 +13,7 @@ export declare class UserController {
     }): Promise<{
         name: string;
         role: import("./schemas/user.schema").AdminRole;
+        edad: string;
+        formalidad: import("./schemas/user.schema").Formalidad;
     }>;
 }
