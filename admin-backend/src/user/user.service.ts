@@ -7,8 +7,7 @@ import { User } from './schemas/user.schema';
 export class UserService {
   constructor(@InjectModel(User.name) private usuarioModel: Model<User>) {}
 
-
-  async create(user: any){
+  async create(user: any) {
     const newUsuario = new this.usuarioModel(user);
     return await newUsuario.save();
   }
@@ -20,10 +19,9 @@ export class UserService {
         name: user.name,
         role: user.role,
         edad: user.edad,
-        formalidad: user.formalidad
+        formalidad: user.formalidad,
       };
     }
     return null;
   }
-
 }

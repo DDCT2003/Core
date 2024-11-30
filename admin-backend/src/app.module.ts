@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { RopaModule } from './ropa/ropa.module';
 import { WeatherModule } from './weather/weather.module';
 import { ColorModule } from './color/color.module';
+import { RecomendacionesModule } from './recomendaciones/recomendaciones.module';
 @Module({
   imports: [
     MongooseModule.forRoot(
@@ -15,6 +16,7 @@ import { ColorModule } from './color/color.module';
     RopaModule,
     WeatherModule,
     ColorModule,
+    RecomendacionesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -7,8 +7,7 @@ import { Ropa } from './schemas/ropa.schema';
 export class RopaService {
   constructor(@InjectModel(Ropa.name) private ropaModel: Model<Ropa>) {}
 
-
-  async create(ropa: any){
+  async create(ropa: any) {
     const newRopa = new this.ropaModel(ropa);
     return await newRopa.save();
   }
@@ -17,9 +16,15 @@ export class RopaService {
     return this.ropaModel.find().exec();
   }
 
-   // Editar prenda
-   async update(id: string, updateRopa: any): Promise<Ropa> {
-    return this.ropaModel.findByIdAndUpdate(id, updateRopa, { new: true }).exec();
+  // Editar prenda
+  async update(id: string, updateRopa: any): Promise<Ropa> {
+    return this.ropaModel
+      .findByIdAndUpdate(id, updateRopa, { new: true })
+      .exec();
+  }
+
+  async searchOne(id: string): Promise<Ropa> {
+    return this.ropaModel.findById(id).exec();
   }
 
   // Eliminar prenda

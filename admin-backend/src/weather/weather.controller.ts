@@ -13,7 +13,10 @@ export class WeatherController {
   }
 
   @Get('clotheswfa')
-  async getClothesWFA(@Query('formalidad') formalidad: string,@Query('edad') edad: number): Promise<Ropa[]> {
-    return this.weatherService.getClothesbyWFA(edad,formalidad);
+  async getClothesWFA(
+    @Query('formalidad') formalidad: string,
+    @Query('edad') edad: number,
+  ): Promise<Ropa[]> {
+    return this.weatherService.getClothesbyWFA(edad, formalidad);
   }
 }

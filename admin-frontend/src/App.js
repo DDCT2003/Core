@@ -13,6 +13,7 @@ import ClimaTienda from './Pages/ClimaTienda';
 import TiendaAdmin from './Pages/TiendaAdmin';
 import AdminEditar from './Pages/AdminEditar';
 import WFATienda from './Pages/WFATienda';
+import AdminColor from './Pages/AdminColor';
 
 
 
@@ -33,11 +34,15 @@ function App() {
           </Route>
 
           <Route element={<ProtectedRoute requiredRole="Admin" />}>
-            <Route path="/AdminEditar" element={<AdminEditar />} />
+          <Route path="/AdminEditar/:id" element={<AdminEditar />} /> 
           </Route>
 
           <Route element={<ProtectedRoute requiredRole="Admin" />}>
             <Route path="/tiendaAdmin" element={<TiendaAdmin />} />
+          </Route>
+
+          <Route element={<ProtectedRoute requiredRole="Admin" />}>
+            <Route path="/AdminColor" element={<AdminColor />} />
           </Route>
 
           <Route element={<ProtectedRoute requiredRole="User" />}>

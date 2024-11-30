@@ -11,7 +11,7 @@ function Tienda() {
   useEffect(() => {
     const fetchPrendas = async () => {
       try {
-        const response = await fetch('http://localhost:3000/ropa/get'); // Endpoint del backend
+        const response = await fetch('https://proyecto-react-back-production.up.railway.app/ropa/get'); // Endpoint del backend
         if (!response.ok) {
           throw new Error('Error al obtener las prendas'); // Manejo de errores HTTP
         }

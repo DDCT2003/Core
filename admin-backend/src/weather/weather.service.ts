@@ -35,8 +35,6 @@ export class WeatherService {
   }
 
   async categorizeAge(edad: number): Promise<string> {
-    
-
     if (edad < 18) {
       return 'Niño';
     } else if (edad >= 18 && edad <= 35) {
@@ -46,18 +44,18 @@ export class WeatherService {
     }
   }
 
-
-
   // Método para obtener prendas desde MongoDB
   async getClothes(city: string): Promise<Ropa[]> {
     const category = await this.categorizeTemperature('Quito');
     return this.clothesModel.find({ clima: category }).exec(); // Busca prendas según la categoría
   }
 
-  async getClothesbyWFA( edad: number, formalidad:string): Promise<Ropa[]> {
+  async getClothesbyWFA(edad: number, formalidad: string): Promise<Ropa[]> {
     const category = await this.categorizeTemperature('Quito');
     const Agecategory = await this.categorizeAge(edad);
 
-    return this.clothesModel.find({ clima: category, formalidad:formalidad, edad: Agecategory }).exec(); // Busca prendas según la categoría
+    return this.clothesModel
+      .find({ clima: category, formalidad: formalidad, edad: Agecategory })
+      .exec(); // Busca prendas según la categoría
   }
 }

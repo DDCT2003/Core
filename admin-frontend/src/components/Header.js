@@ -32,11 +32,15 @@ const Header = () => {
           <FaUserLock className='nav-icon'/> Cerrar Sesión</a></li>
       </>
     );
-  } else if (location.pathname === '/admin' || location.pathname === '/tiendaAdmin') {
+  } else if (location.pathname === '/admin' || location.pathname === '/tiendaAdmin' || location.pathname === '/AdminColor'|| location.pathname.includes('/AdminEditar') ) {
     headerContent = (
       <>
+         <li className="nav-item"><a href="/admin" className="nav-link"> 
+         <FaShopify className='nav-icon'/> Crear Producto</a></li>
          <li className="nav-item"><a href="/tiendaAdmin" className="nav-link"> 
          <FaShopify className='nav-icon'/> Ver Productos</a></li>
+         <li className="nav-item"><a href="/AdminColor" className="nav-link">
+         <FaUserLock className='nav-icon'/> Crear Color</a></li>
          <li className="nav-item"><a href="/contact" onClick={handleLogout} className="nav-link">
          <FaUserLock className='nav-icon'/> Cerrar Sesión</a></li>
       </>

@@ -9,7 +9,7 @@ function ClimaTienda() {
   useEffect(() => {
     const fetchPrendas = async () => {
       try {
-        const response = await fetch('http://localhost:3000/weather/clothes'); // Endpoint del backend
+        const response = await fetch('https://proyecto-react-back-production.up.railway.app/weather/clothes'); // Endpoint del backend
         if (!response.ok) {
           throw new Error('Error al obtener los datos'); // Manejo de errores HTTP
         }

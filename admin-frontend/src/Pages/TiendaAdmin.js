@@ -11,7 +11,7 @@ function TiendaAdmin() {
   useEffect(() => {
     const fetchPrendas = async () => {
       try {
-        const response = await fetch('http://localhost:3000/ropa/get'); // Endpoint del backend
+        const response = await fetch('https://proyecto-react-back-production.up.railway.app/ropa/get'); // Endpoint del backend
         if (!response.ok) {
           throw new Error('Error al obtener los datos'); // Manejo de errores HTTP
         }
@@ -46,8 +46,8 @@ function TiendaAdmin() {
   };
 
 
-  const handleEdit = () => {
-    navigate('/AdminEditar'); // Cambia "/register" a la ruta de tu página de registro
+  const handleEdit = (id) => {
+    navigate(`/AdminEditar/${id}`); // Cambia "/register" a la ruta de tu página de registro
   };
 
   return (
@@ -76,7 +76,7 @@ function TiendaAdmin() {
           
             <button
                 className='botoncore'
-                onClick={() => handleEdit()}
+                onClick={() => handleEdit(ropa._id)}
             >
               Editar
             </button>

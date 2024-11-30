@@ -23,7 +23,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchColores = async () => {
       try {
-        const response = await fetch('http://localhost:3000/color/get'); // Endpoint del backend
+        const response = await fetch('https://proyecto-react-back-production.up.railway.app/color/get'); // Endpoint del backend
         if (!response.ok) {
           throw new Error('Error al obtener los colores');
         }
