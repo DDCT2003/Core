@@ -20,6 +20,13 @@ Esta es una aplicación web de gestión de una tienda de ropa que permite a los 
  - Admin: Puede acceder a un CRUD de prendas.
  - User: Puede acceder a la tienda de ropa.
 
+## Funciones Usuario
+- Ver todas las prendas.
+- Ver todas las prendas filtrando por edad, formalidad o por las dos.
+- Ver prendas por clima
+- Ver una página de for you
+
+
 ## Instalación y configuración
 Sigue estos pasos para configurar el proyecto localmente:
 
@@ -68,6 +75,30 @@ Inicia el servidor de desarrollo:
 │   │   |  ├── user.model .ts
 │   │   |  ├── user.module.ts
 │   │   |  ├── user.service.ts
+│   │   ├── ropa  // carpeta user
+│   │   │  ├── schemas  // carpeta de schema
+│   │   │  |  ├── ropa.schemas.ts  
+│   │   |  ├── ropa.controller.ts
+│   │   |  ├── ropa.module.ts
+│   │   |  ├── ropa.service.ts
+│   │   ├── color  // carpeta user
+│   │   │  ├── schemas  // carpeta de schema
+│   │   │  |  ├── color.schemas.ts  
+│   │   |  ├── color.controller.ts
+│   │   |  ├── color.module.ts
+│   │   |  ├── color.service.ts
+│   │   ├── weather  // carpeta user
+│   │   │  ├── schemas  // carpeta de schema
+│   │   │  |  ├── weather.schemas.ts  
+│   │   |  ├── weather.controller.ts
+│   │   |  ├── weather.module.ts
+│   │   |  ├── weather.service.ts
+│   │   ├── recomendaciones  // carpeta user
+│   │   │  ├── schemas  // carpeta de schema
+│   │   │  |  ├── recomendaciones.schemas.ts  
+│   │   |  ├── recomendaciones.controller.ts
+│   │   |  ├── recomendaciones.module.ts
+│   │   |  ├── recomendaciones.service.ts
 │   │   ├── app.module 
 │   |   ├── main.ts   // Archivo principal de arranque de NestJS
 ├── admin-frontend
