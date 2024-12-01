@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { RecomendacionesService } from './recomendaciones.service';
 
 @Controller('recomendaciones')
@@ -7,10 +7,15 @@ export class RecomendacionesController {
 
 
     @Post('guardar-recomendaciones')
-    async guardarRecomendaciones(@Body() data: { recomendaciones: any[] }) {
-      return this.recomendacionService.guardarVarias(data.recomendaciones);
+    async guardarRecomendaciones(@Body() data: { recomendaciones: any[], username: any }) {
+      return this.recomendacionService.guardarVarias(data.recomendaciones, data.username);
     }
     
+   
+  @Get('usuario')
+  async getRecomendacionesByUsuario(@Param('username') username: string) {
+    return this.recomendacionService.getByUsuario(username);
+  }
 
 
 

@@ -7,6 +7,9 @@ export class Recomendacion {
   prendaId: string;
 
   @Prop({ required: true })
+  userid: string;
+
+  @Prop({ required: true })
   nombre: string;
 
   @Prop({ required: true })
@@ -15,6 +18,8 @@ export class Recomendacion {
   @Prop({ required: true })
   edad: string;
 
+  @Prop({ default: Date.now, type: Date}) // Campo de fecha con valor predeterminado
+  fecha: Date;  
 }
 
 export const RecomendacionSchema = SchemaFactory.createForClass(Recomendacion);

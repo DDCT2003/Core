@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem('auth', JSON.stringify(auth));
   }, [auth]);
 
-  const login = (role, name, edad, formalidad) => {
+  const login = (role, name, edad, formalidad,id) => {
     setAuth({
       isAuthenticated: true,
       userRole: role,

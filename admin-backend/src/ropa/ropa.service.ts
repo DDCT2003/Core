@@ -8,6 +8,9 @@ export class RopaService {
   constructor(@InjectModel(Ropa.name) private ropaModel: Model<Ropa>) {}
 
   async create(ropa: any) {
+    if (ropa.edad < 0) {
+      throw new Error('La edad no puede ser negativa.');
+  }
     const newRopa = new this.ropaModel(ropa);
     return await newRopa.save();
   }
@@ -18,6 +21,9 @@ export class RopaService {
 
   // Editar prenda
   async update(id: string, updateRopa: any): Promise<Ropa> {
+    if (updateRopa.edad < 0) {
+      throw new Error('La edad no puede ser negativa.');
+  }
     return this.ropaModel
       .findByIdAndUpdate(id, updateRopa, { new: true })
       .exec();

@@ -19,7 +19,7 @@ const Header = () => {
         <FaShoppingCart className="header-icon" /> <h1 className="header-title">Bienvenido</h1>
       </>
     );
-  } else if (location.pathname === '/tienda' || location.pathname === '/tiendaClima' || location.pathname === '/WFATienda') {
+  } else if (location.pathname === '/tienda' || location.pathname === '/tiendaClima' || location.pathname === '/WFATienda'|| location.pathname === '/reporte') {
     headerContent = (
       <>
            <li className="nav-item"><a href="/tienda" className="nav-link"> 
@@ -28,6 +28,8 @@ const Header = () => {
           <FaCloud className='nav-icon'/> Ofertas de clima</a></li>
           <li className="nav-item"><a href="/WFATienda" className="nav-link">
           <FaAward className='nav-icon'/> For U </a></li>
+          <li className="nav-item"><a href="/reporte" className="nav-link">
+          <FaAward className='nav-icon'/> Reporte </a></li>
           <li className="nav-item"><a href="/contact" onClick={handleLogout} className="nav-link">
           <FaUserLock className='nav-icon'/> Cerrar Sesión</a></li>
       </>

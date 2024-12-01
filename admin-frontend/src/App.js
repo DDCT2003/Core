@@ -14,6 +14,7 @@ import TiendaAdmin from './Pages/TiendaAdmin';
 import AdminEditar from './Pages/AdminEditar';
 import WFATienda from './Pages/WFATienda';
 import AdminColor from './Pages/AdminColor';
+import Reporte from './Pages/Reporte';
 
 
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/tiendaAdmin" element={<TiendaAdmin />} />
           </Route>
 
+
           <Route element={<ProtectedRoute requiredRole="Admin" />}>
             <Route path="/AdminColor" element={<AdminColor />} />
           </Route>
@@ -57,6 +59,11 @@ function App() {
             <Route path="/WFATienda" element={<WFATienda />} />
           </Route>
    
+   
+          <Route element={<ProtectedRoute requiredRole="User" />}>
+            <Route path="/reporte" element={<Reporte />} />
+          </Route>
+          
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>

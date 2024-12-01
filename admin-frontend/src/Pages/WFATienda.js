@@ -12,12 +12,17 @@ function WFATienda() {
 
     console.log(auth.age)
     console.log(auth.formalidad)
+    console.log(auth.userName)
+    console.log(auth._id)
+
 
   useEffect(() => {
     const fetchPrendasWfa = async () =>{
       setLoading(true); // Inicia el estado de carga
       setError(null); // Limpia errores previos
       try {
+        
+
         const response = await fetch(
           `https://proyecto-react-back-production.up.railway.app/weather/clotheswfa?edad=${edad}&formalidad=${formalidad}`
         );
@@ -38,13 +43,12 @@ function WFATienda() {
 
   useEffect(() => {
     
-  
     const guardarRecomendaciones = async () => {
       try {
         await fetch('https://proyecto-react-back-production.up.railway.app/recomendaciones/guardar-recomendaciones', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ recomendaciones: prendas }),
+          body: JSON.stringify({ recomendaciones: prendas, username: auth.userName }),
         });
         console.log('Recomendaciones guardadas exitosamente');
       } catch (err) {

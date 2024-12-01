@@ -8,6 +8,9 @@ export class UserService {
   constructor(@InjectModel(User.name) private usuarioModel: Model<User>) {}
 
   async create(user: any) {
+    if (user.edad < 0) {
+      throw new Error('La edad no puede ser negativa.');
+  }
     const newUsuario = new this.usuarioModel(user);
     return await newUsuario.save();
   }

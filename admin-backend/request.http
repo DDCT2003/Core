@@ -1,7 +1,3 @@
-POST http://localhost:3000/color HTTP/1.1
+GET https://proyecto-react-back-production.up.railway.app/recomendaciones/usuario?username=DDCT&fechaInicio=2024-11-29&fechaFin=2024-12-01 HTTP/1.1
+Host: proyecto-react-back-production.up.railway.app
 Content-Type: application/json
-
-{
-    "color": "Morado"
-}
-
