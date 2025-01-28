@@ -8,7 +8,7 @@ import {
   Put,
 } from '@nestjs/common';
 import { RopaService } from './ropa.service';
-import { Ropa } from './schemas/ropa.schema';
+import { Ropa } from './ropa.model';
 
 @Controller('ropa')
 export class RopaController {

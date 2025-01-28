@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Query } from '@nestjs/common';
 import { WeatherService } from './weather.service';
-import { Ropa } from '../ropa/schemas/ropa.schema';
 import { Formalidad } from 'src/user/schemas/user.schema';
+import { Ropa } from 'src/ropa/ropa.model';
 
 @Controller('weather')
 export class WeatherController {
@@ -17,6 +17,6 @@ export class WeatherController {
     @Query('formalidad') formalidad: string,
     @Query('edad') edad: number,
   ): Promise<Ropa[]> {
-    return this.weatherService.getClothesbyWFA(edad, formalidad);
+    return this.weatherService.getClothesByAgeAndFormality("Quito",edad, formalidad);
   }
 }

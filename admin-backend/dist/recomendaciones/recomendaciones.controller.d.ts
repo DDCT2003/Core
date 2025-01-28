@@ -6,5 +6,5 @@ export declare class RecomendacionesController {
         recomendaciones: any[];
         username: any;
     }): Promise<any>;
-    getRecomendacionesByUsuario(username: string, fechaInicio?: string, fechaFin?: string): Promise<import("./schemas/recomendaciones.schema").Recomendacion[]>;
+    getRecomendacionesByUsuario(username: string): Promise<import("./schemas/recomendaciones.schema").Recomendacion[]>;
 }

@@ -23,7 +23,7 @@ let WeatherController = class WeatherController {
         return this.weatherService.getClothes('Quito');
     }
     async getClothesWFA(formalidad, edad) {
-        return this.weatherService.getClothesbyWFA(edad, formalidad);
+        return this.weatherService.getClothesByAgeAndFormality("Quito", edad, formalidad);
     }
 };
 exports.WeatherController = WeatherController;

@@ -14,42 +14,36 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RopaService = void 0;
 const common_1 = require("@nestjs/common");
+const RopaValidator_1 = require("./Validators/RopaValidator");
 const mongoose_1 = require("@nestjs/mongoose");
+const ropa_model_1 = require("./ropa.model");
 const mongoose_2 = require("mongoose");
-const ropa_schema_1 = require("./schemas/ropa.schema");
 let RopaService = class RopaService {
     constructor(ropaModel) {
         this.ropaModel = ropaModel;
     }
-    async create(ropa) {
-        if (ropa.edad < 0) {
-            throw new Error('La edad no puede ser negativa.');
-        }
-        const newRopa = new this.ropaModel(ropa);
-        return await newRopa.save();
-    }
     async findAll() {
         return this.ropaModel.find().exec();
     }
-    async update(id, updateRopa) {
-        if (updateRopa.edad < 0) {
-            throw new Error('La edad no puede ser negativa.');
-        }
-        return this.ropaModel
-            .findByIdAndUpdate(id, updateRopa, { new: true })
-            .exec();
+    async create(ropa) {
+        RopaValidator_1.RopaValidator.validateEdad(ropa.edad);
+        return this.ropaRepository.create(ropa);
     }
     async searchOne(id) {
-        return this.ropaModel.findById(id).exec();
+        return this.ropaRepository.findOneById(id);
+    }
+    async update(id, updateRopa) {
+        RopaValidator_1.RopaValidator.validateEdad(updateRopa.edad);
+        return this.ropaRepository.update(id, updateRopa);
     }
     async delete(id) {
-        return this.ropaModel.findByIdAndDelete(id).exec();
+        return this.ropaRepository.delete(id);
     }
 };
 exports.RopaService = RopaService;
 exports.RopaService = RopaService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, mongoose_1.InjectModel)(ropa_schema_1.Ropa.name)),
+    __param(0, (0, mongoose_1.InjectModel)(ropa_model_1.Ropa.name)),
     __metadata("design:paramtypes", [mongoose_2.Model])
 ], RopaService);
 //# sourceMappingURL=ropa.service.js.map

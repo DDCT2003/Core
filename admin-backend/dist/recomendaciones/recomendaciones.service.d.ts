@@ -4,5 +4,5 @@ export declare class RecomendacionesService {
     private recomendacionModel;
     constructor(recomendacionModel: Model<Recomendacion>);
     guardarVarias(recomendaciones: any[], username: any): Promise<any>;
-    getByUsuario(username: string, fechaInicio?: string, fechaFin?: string): Promise<Recomendacion[]>;
+    getByUsuario(username: string): Promise<Recomendacion[]>;
 }

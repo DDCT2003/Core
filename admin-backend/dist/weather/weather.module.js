@@ -8,22 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WeatherModule = void 0;
 const common_1 = require("@nestjs/common");
-const axios_1 = require("@nestjs/axios");
-const mongoose_1 = require("@nestjs/mongoose");
 const weather_service_1 = require("./weather.service");
 const weather_controller_1 = require("./weather.controller");
-const ropa_schema_1 = require("../ropa/schemas/ropa.schema");
+const WeatherCategorizationService_1 = require("./WeatherCategorizationService");
+const ropa_module_1 = require("../ropa/ropa.module");
+const axios_1 = require("@nestjs/axios");
+const ApiWeatherService_1 = require("./ApiWeatherService");
 let WeatherModule = class WeatherModule {
 };
 exports.WeatherModule = WeatherModule;
 exports.WeatherModule = WeatherModule = __decorate([
     (0, common_1.Module)({
-        imports: [
-            axios_1.HttpModule,
-            mongoose_1.MongooseModule.forFeature([{ name: ropa_schema_1.Ropa.name, schema: ropa_schema_1.RopaSchema }]),
-        ],
+        imports: [ropa_module_1.RopaModule, axios_1.HttpModule],
         controllers: [weather_controller_1.WeatherController],
-        providers: [weather_service_1.WeatherService],
+        providers: [
+            weather_service_1.WeatherService,
+            ApiWeatherService_1.ApiWeatherService,
+            WeatherCategorizationService_1.WeatherCategorizationService,
+        ],
     })
 ], WeatherModule);
 //# sourceMappingURL=weather.module.js.map

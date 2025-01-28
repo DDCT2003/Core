@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import { RopaService } from './ropa.service';
 import { RopaController } from './ropa.controller';
-import { Ropa, RopaSchema } from './schemas/ropa.schema';
+import { ClothesService } from './ClothesService';
+import { RopaService } from './ropa.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { Ropa, RopaSchema } from './ropa.model';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: Ropa.name, schema: RopaSchema }]),
-  ],
-  providers: [RopaService],
-  controllers: [RopaController],
+  imports: [MongooseModule.forFeature([{ name: Ropa.name, schema: RopaSchema }])],
+  controllers: [RopaController], 
+  providers: [ClothesService,RopaService], // Agrega ClothesService aquí
+  exports: [ClothesService,RopaService], // Expórtalo para otros módulos
 })
 export class RopaModule {}
