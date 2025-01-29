@@ -2,6 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { WeatherApiInterface } from "./ApiInterface";
 import { HttpService } from "@nestjs/axios";
 import { firstValueFrom } from "rxjs";
+import { Console } from "console";
 
 @Injectable()
 export class ApiWeatherService implements WeatherApiInterface {

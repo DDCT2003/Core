@@ -13,6 +13,7 @@ export class WeatherService {
 
   async getClothes(city: string): Promise<any[]> {
     const temperature = await this.apiWeatherService.getTemperature(city);
+    console.log(temperature)
     const category = this.weatherCategorizationService.categorizeTemperature(temperature);
     return this.clothesService.getClothesByCriteria(category);
   }

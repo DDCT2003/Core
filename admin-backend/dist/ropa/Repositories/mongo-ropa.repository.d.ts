@@ -1,8 +1,12 @@
-export declare class MongoRopaRepository {
-    private data;
-    create(ropa: any): Promise<any>;
-    findAll(): Promise<any[]>;
-    findOneById(id: string): Promise<any>;
-    update(id: string, updateRopa: any): Promise<any>;
-    delete(id: string): Promise<any>;
+import { IRopaRepository } from '../Interfaces/ropa-repository.interface';
+import { Ropa } from '../ropa.model';
+import { Model } from 'mongoose';
+export declare class MongoRopaRepository implements IRopaRepository {
+    private ropaModel;
+    constructor(ropaModel: Model<Ropa>);
+    create(ropa: any): Promise<Ropa>;
+    findAll(): Promise<Ropa[]>;
+    findOneById(id: string): Promise<Ropa>;
+    update(id: string, updateRopa: any): Promise<Ropa>;
+    delete(id: string): Promise<Ropa>;
 }

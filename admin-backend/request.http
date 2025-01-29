@@ -1,3 +1,2 @@
-GET https://proyecto-react-back-production.up.railway.app/ropa/get HTTP/1.1
-Host: proyecto-react-back-production.up.railway.app
-Content-Type: application/json
+GET http://localhost:3000/weather/clothes?city=Quito HTTP/1.1
+

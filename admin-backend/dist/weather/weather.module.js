@@ -24,8 +24,9 @@ exports.WeatherModule = WeatherModule = __decorate([
         providers: [
             weather_service_1.WeatherService,
             ApiWeatherService_1.ApiWeatherService,
-            WeatherCategorizationService_1.WeatherCategorizationService,
+            WeatherCategorizationService_1.WeatherCategorizationService
         ],
+        exports: [weather_service_1.WeatherService],
     })
 ], WeatherModule);
 //# sourceMappingURL=weather.module.js.map

@@ -22,6 +22,7 @@ let WeatherService = class WeatherService {
     }
     async getClothes(city) {
         const temperature = await this.apiWeatherService.getTemperature(city);
+        console.log(temperature);
         const category = this.weatherCategorizationService.categorizeTemperature(temperature);
         return this.clothesService.getClothesByCriteria(category);
     }
